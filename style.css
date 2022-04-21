@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+body{
+    background-image: url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+    background-size: 100%;
+    margin:0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    padding:0;
+}
+#nav{
+    margin-top:2%;
+}
+
+ul{
+    border-radius: 50px 50px 50px 50px;
+    background-color:rgba(255, 255, 255, 0.234);
+    flex-direction: row;
+    padding-inline-start: 6px;
+    padding-inline-end: 50px;
+    justify-items:center;
+    transform:scaleX(1);
+    align-items: center;
+    margin-right:30px;
+    height: 50px;
+    backdrop-filter: blur(20px);
+    position:fixed;
+    right:0.05%;
+    float:right;
+    display: none;
+    transition: right 500ms ease-in-out;
+    transition: display 500ms ease-in-out;
+    transition: transform 500ms ease-in-out;
+}
+li{
+    padding:10px 25px 10px 25px;
+    color:white;
+    list-style: none;
+    justify-items:center;
+    align-items: center;
+    transition: 0.2s ease;
+    border-radius:10px;
+}
+li:hover{
+    cursor: pointer;
+    background-color:rgb(210, 210, 210);
+    color:rgb(29, 29, 29);
+    border-radius: 50px; 
+    /* margin-inline: 10px; */
+    /* border-bottom: 2px solid black; */
+    transition: 0.5s ease-in-out;
+}
+#cross{
+    transition: transform 500ms ease-in-out;
+    aspect-ratio: 1;
+    width:40px;
+    margin:10px;
+    margin-top:21px;
+    float: right;
+    background-image: url(https://cdn0.iconfinder.com/data/icons/web-seo-and-advertising-media-1/512/218_Arrow_Arrows_Back-512.png);
+    background-color:rgb(210, 210, 210);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 9;
+    transform:rotate(0deg);
+    border-radius: 50%;
+    position:fixed;
+    display:flex;
+    right:1.65%;
+    z-index: 10;
+    transition: 0.5s ease-in-out;
+}
+#cross:hover{
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+#nav[data-visible="true"] {
+    transform: translateX(0);
+}
