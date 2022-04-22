@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap');
 body{
-    background-image: url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+    /* background-image: url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80); */
     background-size: 100%;
     margin:0;
     font-family: 'Quicksand', sans-serif;
@@ -76,3 +76,52 @@ li:hover{
 #nav[data-visible="true"] {
     transform: translateX(0);
 }
+
+/* 
+@media (min-width: 36em) {
+    ul {
+        background-color:blue;
+    }
+}
+
+@media (min-width: 45em) {
+    ul {
+        background-color:black;
+    }
+} */
+
+/* Set the background color of body to tan */
+body {
+    background-color: tan;
+  }
+  
+  /* On screens that are 992px or less, set the background color to blue */
+  /* @media screen and (max-width: 992px) {
+    body {
+      background-color: blue;
+    }
+  } */
+  
+  /* On screens that are 600px or less, set the background color to olive */
+  /* @media screen and (max-width: 600px) {
+    body {
+      background-color: olive;
+    }
+  } */
+
+  @media screen and (orientation: portrait)  {
+      ul{
+          background-color: blue;
+          padding: 100px;
+          height: 100%;
+          margin:0;
+          font-size: 20px;
+          top:0%;
+          border-radius: 0px;
+          padding-block-start: 200px;
+          flex-direction: column;
+      }
+      #cross{
+
+      }
+  }
