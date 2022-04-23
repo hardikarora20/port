@@ -131,8 +131,13 @@ body {
           animation: jump2 0s;
       }
       li{
+          outline:none;
+          box-shadow: none;
           margin: 4%;
           user-select: none;
+      }
+      li:focus {
+          outline:0 !important;
       }
       li[content="active"],li:hover{
         padding:20px 200px 20px 200px;
@@ -144,8 +149,5 @@ body {
         animation: jump 0s;
         right:5%;
         background-position: 13;
-      }
-      body{
-          background-size: cover;
       }
   }
