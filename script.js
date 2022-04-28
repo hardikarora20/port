@@ -1,3 +1,6 @@
+
+
+
 function nav(){  
     console.log(document.getElementsByTagName('ul')[0].style.fontSize=="35px");  
     if(document.getElementsByTagName('ul')[0].style.transform=="translateX(0%)"){
@@ -22,11 +25,15 @@ function nav(){
     }
 }
 
-
-function tab(){
+// const activeDiv = document.querySelector('.active');
+// activeDiv.classList.add('hidden');   
+// function tab(){
     
-    document.getElementById(this).setAttribute("content", "active"); 
-}
+//     document.getElementsByClassName(li)[2].add('active');
+
+// }
+
+
 window.addEventListener('scroll', reveal);
 
 function reveal(){
@@ -44,5 +51,23 @@ function reveal(){
     else{
       reveals[i].classList.remove('active');
     }
+  }
+}
+
+
+document.getElementById("title").style.backgroundColor = "red";
+
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
   }
 }
