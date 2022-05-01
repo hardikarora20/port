@@ -3,7 +3,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background-image: url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+    background-image: url(images/back.jpg);
     background-size: cover;
     filter:alpha(opacity=40);
     margin:0;
@@ -79,7 +79,7 @@ li:hover{
     margin:10px;
     margin-top:21px;
     float: right;
-    background-image: url(https://cdn0.iconfinder.com/data/icons/web-seo-and-advertising-media-1/512/218_Arrow_Arrows_Back-512.png);
+    background-image: url(images/arrow.webp);
     background-color:rgb(210, 210, 210);
     background-size: 50%;
     background-repeat: no-repeat;
@@ -138,28 +138,31 @@ body {
       li{
           outline:none;
           box-shadow: none;
-          margin: 4%;
+          margin: 2%;
+          padding:20px 200px 20px 170px;
           user-select: none;
       }
       li:focus {
           outline:0 !important;
       }
       li[content="active"],li:hover{
-        padding:20px 200px 20px 200px;
+        padding:20px 200px 20px 170px;
         font-size: 38px;
-      }
-      .active{
-        background-color:Red;
       }
       #cross{
         width:60px;
         top:5%;
         animation: jump 0s;
         right:5%;
-        z-index: 11;
+        z-index: 600;
         background-position: 13;
       }
-  }
+      .testimonial-grid {
+        grid-template-areas:
+        "one two two three"
+        "five five four six";
+      }
+    }
 
   section{
       min-height: 100vh;
@@ -201,7 +204,7 @@ body {
     gap: 1.5rem;
     grid-auto-columns: 1fr;
     padding-block: 2rem;
-    width: min(100%, 78rem);
+    width: min(100%, 70rem);
     margin-inline: auto;
     grid-template-areas:
     "one one two three"
