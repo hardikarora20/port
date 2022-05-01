@@ -46,7 +46,7 @@ ul{
     float:right;
     display: flex;
     transition: transform 390ms ease-out;
-    animation: jump2 2s;
+    animation: jump2 0s;
     transform:translateX(98%);
 }
 li{
@@ -102,7 +102,7 @@ li:hover{
     right:-1%;
     z-index: 10;
     transition: 0.5s ease-in-out;
-    animation: jump 2s;
+    animation: jump 0s;
 }
 #cross:hover{
     transition: 0.5s ease-in-out;
@@ -349,5 +349,5 @@ body {
   display: block;
   position:fixed;
   z-index: 899;
-  transition: 1s all ease-in-out;
+  transition: 0.5s all ease-in-out;
 }
