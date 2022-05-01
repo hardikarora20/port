@@ -1,6 +1,10 @@
-
-
-
+window.onload=function(){
+  document.getElementById("spindiv").style.opacity="0";
+  document.getElementById("spindiv").style.display="none";
+  document.getElementsByTagName('ul')[0].style.animation="jump2 2s";
+  document.getElementById("cross").style.animation=="jump2 2s";
+  console.log("loaded");
+};
 function nav(){  
     console.log(document.getElementsByTagName('ul')[0].style.fontSize=="35px");  
     if(document.getElementsByTagName('ul')[0].style.transform=="translateX(0%)"){
