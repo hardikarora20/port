@@ -1,10 +1,38 @@
-window.onload=function(){
+// body.onload=setTimeout(function(){
+//   document.getElementById("spindiv").style.opacity="0";
+//   document.getElementsByTagName('ul')[0].style.animation="jump2 2s";
+//   document.getElementById("cross").style.animation="jump2 2s";
+//   console.log("loaded");
+//   setTimeout(() => { hidespin(); }, 1200);
+// },1000);
+
+setTimeout(function load(){
   document.getElementById("spindiv").style.opacity="0";
-  document.getElementById("spindiv").style.display="none";
-  document.getElementsByTagName('ul')[0].style.animation="jump2 2s";
-  document.getElementById("cross").style.animation=="jump2 2s";
   console.log("loaded");
-};
+  setTimeout(() => { hidespin(); }, 1200);
+},1000);
+
+
+// setTimeout(function(){
+
+if(document.getElementById("spindiv").style.display=="none"){
+  setTimeout(function fade(){
+    setTimeout(() => { 
+      document.getElementsByTagName('ul')[0].style.animation="jump2 2s";
+    }, 3200);
+    setTimeout(() => { 
+      document.getElementById("cross").style.animation="jump 2s";
+    }, 3200);
+    setTimeout(() => { 
+      document.getElementById("home").style.animation="fade 2s ease-in";
+    }, 3200);
+  },2000);
+}
+// }, 500); 
+
+function hidespin(){
+  document.getElementById("spindiv").style.display="none";
+}
 function nav(){  
     console.log(document.getElementsByTagName('ul')[0].style.fontSize=="35px");  
     if(document.getElementsByTagName('ul')[0].style.transform=="translateX(0%)"){
