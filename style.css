@@ -115,6 +115,17 @@ li:hover{
     background-color:rgba(254, 254, 254, 0.471);
     /* outline: 2px solid rgb(85, 85, 85); */
 }
+svg{
+  display:block;
+  margin-top: 30%;
+  margin-left:33%;
+  transform: scale(0.7);
+  z-index: 3;
+}
+line{
+  stroke:var(--bwhite);
+  stroke-width:4;
+}
 #cross{
     transition: transform 500ms ease-in-out;
     aspect-ratio: 1;
@@ -122,7 +133,7 @@ li:hover{
     margin:10px;
     margin-top:21px;
     float: right;
-    background-image: url(/images/arrow.svg);
+    /* background-image: url(/images/arrow.svg); */
     background-color:var(--white);
     color:var(--white);
     background-size: 50%;
@@ -210,6 +221,12 @@ li:hover{
         right:5%;
         z-index: 600;
         background-position: 13;
+      }
+      svg{
+        transform: scale(1.8);
+        margin-top: 45%;
+        margin-left:48%;
+        
       }
       .testimonial-grid {
         grid-template-areas:
