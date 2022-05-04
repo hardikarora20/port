@@ -1,20 +1,27 @@
-// body.onload=setTimeout(function(){
-//   document.getElementById("spindiv").style.opacity="0";
-//   document.getElementsByTagName('ul')[0].style.animation="jump2 2s";
-//   document.getElementById("cross").style.animation="jump2 2s";
-//   console.log("loaded");
-//   setTimeout(() => { hidespin(); }, 1200);
-// },1000);
-
-setTimeout(function load(){
+var colors=[{"color" : "rgb(125, 30, 30)","bcolor" : "rgb(255, 81, 81)"   , "dcolor" : "hsl(0, 100% ,var(--l))"},
+            {"color" : "rgb(29, 67, 48)", "bcolor" : "rgb(113, 208, 137)" , "dcolor" : "hsl(135, 50% ,var(--l))"},
+            {"color" : "rgb(88, 72, 33)", "bcolor" : "rgb(208, 199, 113)" , "dcolor" : "hsl(54, 50% ,var(--l))"},
+            {"color" : "rgb(39, 58, 73)", "bcolor" : "hsl(206, 100%, 90%)" , "dcolor" : "hsl(206, 60% ,var(--l))"}];
+ var rig1="5%";
+ var rig2="5%";
+ setTimeout(function load(){
   document.getElementById("spindiv").style.opacity="0";
-  console.log("loaded");
   setTimeout(() => { hidespin(); }, 1200);
 },1000);
-
-
 // setTimeout(function(){
-
+var repeater;
+function rep(){
+  if(window.innerHeight < window.innerWidth){
+  rig1="-1%";
+  rig2="translateX(98%)";
+}
+else{
+  rig1="5%";
+  rig2="translateX(100%)";
+}
+repeater=setTimeout(rep,1000)
+}
+rep();
 if(document.getElementById("spindiv").style.display=="none"){
   setTimeout(function fade(){
     setTimeout(() => { 
@@ -37,17 +44,13 @@ function nav(){
     console.log(document.getElementsByTagName('ul')[0].style.fontSize=="35px");  
     if(document.getElementsByTagName('ul')[0].style.transform=="translateX(0%)"){
         document.getElementById("cross").style.transform="rotate(0deg)";
-        if(document.getElementsByTagName('ul')[0].style.animation=="jump2 0s"){
-            document.getElementsByTagName('ul')[0].style.transform="translateX(100%)";
-        }
-        else{
-            document.getElementsByTagName('ul')[0].style.transform="translateX(98%)";
-        }
-        document.getElementById("cross").style.right="-1%";
+        document.getElementsByTagName('ul')[0].style.transform=rig2;
+        document.getElementById("cross").style.right=rig1;
     }
     else{
         document.getElementById("cross").style.transform="rotate(180deg)";
         document.getElementsByTagName('ul')[0].style.transform="translateX(0%)";
+        document.getElementsByTagName('ul')[0].style.opacity="1";  
         if(document.getElementsByTagName('ul')[0].style.flexDirection=="column"){
             document.getElementById("cross").style.right="5%";
         }
@@ -57,6 +60,18 @@ function nav(){
     }
 }
 
+function theme(){
+  console.log(colors);  
+  var index=0;
+  // console.log(document.getElementById(this.id));
+  window.onclick = e => {
+    index=e.target.getAttribute("content");
+    document.documentElement.style.setProperty("--white", (colors[index].color));
+    document.documentElement.style.setProperty("--bwhite",(colors[index].bcolor));
+    document.documentElement.style.setProperty("--color-primary-darker",(colors[index].dcolor));
+    console.log(e.target.getAttribute("content"));
+  } 
+}
 // const activeDiv = document.querySelector('.active');
 // activeDiv.classList.add('hidden');   
 // function tab(){
