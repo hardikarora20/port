@@ -6,13 +6,15 @@
     <body onload="load()">
       <div class="back">
       </div>
+      <div class="c1"></div>
+      <div class="c2"></div>
       <center><div id="spindiv">
       <div id="spinner"></div></div></center>
-        <div id="nav" data-visible="false">
-            <div id="cross" onclick="nav()"></div>
+      <div id="nav">
+      <div id="cross" onclick="nav()"></div>
             <ul>
                 <a href="#home">
-                <li content="active">HOME</li>
+                <li content="active" class="homli" >HOME</li>
             </a>
             
             <a href="#about">
@@ -29,6 +31,31 @@
             </ul>
         </div>
 
+
+<!-- 
+ <main class="testimonial-grid">
+    <article class="testimonial grid-col-span-2 flow bg-primary-400 quote text-neutral-100">
+      <div class="flex">
+        <div>
+          <img  src="./images/image-daniel.jpg" alt="daniel clifford">
+        </div>
+        <div>
+          <h2 class="name">Daniel Clifford</h2>
+          <p class="position">Verified Graduate</p>
+        </div>
+      </div>
+      <p>
+        I received a job offer mid-course, and the subjects I learned were current, if not more so,
+        in the company I joined. I honestly feel I got every penny’s worth.
+      </p>
+      <p>
+        “ I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a
+        transition and have heard some people who had an amazing experience here. I signed up
+        for the free intro course and found it incredibly fun! I enrolled shortly thereafter.”
+      </p>
+    </article>
+
+ -->
 <div class="container">
  <section id="home">
   <div class="container">
@@ -40,7 +67,7 @@
       <h2>About</h2>
   </section>
   <section id="works">
-    <div class="container reveal">
+    <div class="container ">
       
  <main class="testimonial-grid">
 
@@ -53,7 +80,7 @@
         <h2 class="name">Wordle<br><font class="yr">Mar 2022-Apr 2022</font></h2>
       </div>
     </div>
-    <p>
+    <p class="textcon">
       On C++, I created a wordle programme that picks a word at random
       from a list of words and gives the user six attempts to guess the word<span id="dots">...</span><span id="more">
       As the user tries to guess the word, the application provides hints about
@@ -69,7 +96,7 @@
         <h2 class="name">Daniel Clifford<br><font class="yr">2020-21</font></h2>
       </div>
     </div>
-    <p>
+    <p class="textcon">
       I received a job offer mid-course, and the subjects I learned were current, if not more so,
       in the company I joined. I honestly feel I got every penny’s worth.
     </p>
@@ -83,7 +110,7 @@
         <h2 class="name">Daniel Clifford<br><font class="yr">2020-21</font></h2>
       </div>
     </div>
-    <p>
+    <p class="textcon">
       I received a job offer mid-course, and the subjects I learned were current, if not more so,
       in the company I joined. I honestly feel I got every penny’s worth.
     </p>
@@ -97,7 +124,7 @@
         <h2 class="name">Daniel Clifford<br><font class="yr">2020-21</font></h2>
       </div>
     </div>
-    <p>
+    <p class="textcon">
       I received a job offer mid-course, and the subjects I learned were current, if not more so,
       in the company I joined. I honestly feel I got every penny’s worth.
     </p>
@@ -111,7 +138,7 @@
         <h2 class="name">Daniel Clifford<br><font class="yr">2020-21</font></h2>
       </div>
     </div>
-    <p>
+    <p class="textcon">
       I received a job offer mid-course, and the subjects I learned were current, if not more so,
       in the company I joined. I honestly feel I got every penny’s worth.
     </p>
@@ -125,7 +152,7 @@
         <h2 class="name">Daniel Clifford<br><font class="yr">2020-21</font></h2>
       </div>
     </div>
-    <p>
+    <p class="textcon">
       I received a job offer mid-course, and the subjects I learned were current, if not more so,
       in the company I joined. I honestly feel I got every penny’s worth.
     </p>
@@ -133,8 +160,12 @@
   </section>
 
   <section id="contact">
-    <div class="container reveal">
-      <h2>Contact</h2>
+    <div class="container">
+      <center><h2>Contact</h2><br></center> 
+      <div id="red" content="0" onclick="theme()"></div>
+      <div id="green" content="1" onclick="theme()"></div>
+      <div id="yellow" content="2" onclick="theme()"></div>
+      <div id="blue" content="3" onclick="theme()"></div>
   </section>
 </div>
     </body>
