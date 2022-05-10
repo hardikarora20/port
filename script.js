@@ -1,9 +1,60 @@
-var colors=[{"color" : "rgb(125, 30, 30)","bcolor" : "rgb(255, 81, 81)"   , "dcolor" : "hsl(0, 100% ,var(--l))"},
-            {"color" : "rgb(29, 67, 48)", "bcolor" : "rgb(113, 208, 137)" , "dcolor" : "hsl(135, 50% ,var(--l))"},
-            {"color" : "rgb(88, 72, 33)", "bcolor" : "rgb(208, 199, 113)" , "dcolor" : "hsl(54, 50% ,var(--l))"},
-            {"color" : "rgb(39, 58, 73)", "bcolor" : "hsl(206, 100%, 90%)" , "dcolor" : "hsl(206, 60% ,var(--l))"}];
+var colors=[{"color" : "rgb(125, 30, 30)","bcolor" : "hsl(0, 100%, 66%)"   , "dcolor" : "hsl(0, 100% ,var(--l))"  , "lcolor" : "hsl(0, 100% ,var(--m))"  },
+            {"color" : "rgb(29, 67, 48)", "bcolor" : "rgb(113, 208, 137)"  , "dcolor" : "hsl(135, 50% ,var(--l))" , "lcolor" : "hsl(135, 50% ,var(--m))" },
+            {"color" : "rgb(88, 72, 33)", "bcolor" : "rgb(208, 199, 113)"  , "dcolor" : "hsl(54, 50% ,var(--l))"  , "lcolor" : "hsl(54, 50% ,var(--m))"  },
+            {"color" : "rgb(39, 58, 73)", "bcolor" : "hsl(206, 100%, 90%)" , "dcolor" : "hsl(206, 60% ,var(--l))" , "lcolor" : "hsl(206, 60% ,var(--m))" }];
  var rig1="5%";
  var rig2="5%";
+ 
+//  const cursor = document.getElementById("cursor");
+var timeout;
+document.addEventListener('mousemove',(e)=>{
+  document.getElementById("cursor").style.left=e.pageX+'px';
+  document.getElementById("cursor").style.top=e.pageY+'px';
+  document.getElementById("cursor").style.opacity="1";
+const sections=document.querySelectorAll("section");
+const options={
+  threshold:0.7
+};
+let observer=new IntersectionObserver(navcheck, options);
+function navcheck(entries){
+  entries.forEach(entry=>{
+    const className=entry.target.className;
+    const activeAnchor=document.querySelector(`[data-page=${className}]`);
+    const coords=activeAnchor.getBoundingClientRect();
+    const directions={
+      height:coords.height,
+      width:coords.width,
+      top:coords.top,
+      left:coords.left
+    };
+    if(entry.isIntersecting){
+      console.log(entry);
+    }
+  })
+}
+
+sections.forEach(section=>{
+  observer.observe(section);
+});
+
+function mouseStop(){
+  document.getElementById("cursor").style.opacity="0";
+}
+clearTimeout(timeout);
+timeout=setTimeout(mouseStop,3000);
+ })
+
+ document.addEventListener('mouseout',(e)=>{
+  document.getElementById("cursor").style.opacity="0";
+})
+//  window.addEventListener("mousemove",cursor);
+ 
+//  function cursor(e){
+//    mouseCursor.style.top=e.pageY+'px';
+//    mouseCursor.style.left=e.pageX+'px';
+//  }
+
+ 
  setTimeout(function load(){
   document.getElementById("spindiv").style.opacity="0";
   setTimeout(() => { hidespin(); }, 1200);
@@ -69,7 +120,8 @@ function theme(){
     document.documentElement.style.setProperty("--white", (colors[index].color));
     document.documentElement.style.setProperty("--bwhite",(colors[index].bcolor));
     document.documentElement.style.setProperty("--color-primary-darker",(colors[index].dcolor));
-    console.log(e.target.getAttribute("content"));
+    document.documentElement.style.setProperty("--color-primary-darkest",(colors[index].lcolor));
+    console.log(colors[index].lcolor);
   } 
 }
 // const activeDiv = document.querySelector('.active');
@@ -79,7 +131,7 @@ function theme(){
 //     document.getElementsByClassName(li)[2].add('active');
 
 // }
-
+// document.addEventListener(scrollY,)
 
 window.addEventListener('scroll', reveal);
 
@@ -104,17 +156,3 @@ function reveal(){
 
 document.getElementById("title").style.backgroundColor = "red";
 
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more"; 
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less"; 
-    moreText.style.display = "inline";
-  }
-}
