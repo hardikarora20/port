@@ -177,7 +177,7 @@ line{
   
   @media screen and (orientation: portrait)  {
       .ulnav{
-          background-color:rgba(105, 105, 105, 0.166);
+          background-color:rgba(0, 0, 0, 0.166);
           backdrop-filter: blur(20px);
           padding: 100px;
           height: 100%;
@@ -544,7 +544,7 @@ line{
       font-size: 1rem;
     }
     .ulnav{
-      background-color:rgba(255, 255, 255, 0.379);
+      background-color:rgba(0, 0, 0, 0.451);
       backdrop-filter: blur(20px);
       transition: all 200ms ease-out;
       opacity:0;
